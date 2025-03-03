@@ -1,3 +1,5 @@
+package cz.uhk.fractions.app;
+
 import cz.uhk.fractions.model.Fraction;
 
 public class TheFractions {
