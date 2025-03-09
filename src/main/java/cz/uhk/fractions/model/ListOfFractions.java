@@ -8,7 +8,10 @@ public class ListOfFractions {
     private List<Fraction> fractions = new ArrayList<>();
 
     public void addFraction(Fraction fraction) {
-        fractions.add(fraction);
+        if (fraction != null) {
+            fractions.add(fraction);
+        }
+        else {throw new NullPointerException("Fraction null");}
     }
 
     public void removeFraction(int index) {
@@ -23,8 +26,23 @@ public class ListOfFractions {
         for (Fraction fraction : fractions) {out.printf("[%s]\n",fraction.toString());}
     }
 
+    public Fraction sumOfFractions() {
+        Fraction sum = new Fraction(0, 1);
+        for(Fraction x : fractions){
+            sum = sum.add(x);
+        }
+        return sum;
+    }
 
-    //add sum and avg later since i fucking cant take it anymore
+    public Fraction fractionsAverage() {
+        Fraction sum = sumOfFractions();
+        Fraction amount = new Fraction(fractions.size(),1);
+        return sum.divide(amount);
+    }
+
+    public int fractionsAmount() {
+        return fractions.size();
+    }
     //also add all the testing shit
 
 }
