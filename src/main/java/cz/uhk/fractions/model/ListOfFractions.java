@@ -43,6 +43,5 @@ public class ListOfFractions {
     public int fractionsAmount() {
         return fractions.size();
     }
-    //also add all the testing shit
 
 }

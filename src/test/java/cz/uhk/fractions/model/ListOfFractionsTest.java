@@ -31,6 +31,10 @@ class ListOfFractionsTest {
 
     @Test
     void removeFraction() {
+        list.addFraction(new Fraction(3,5));
+        assertEquals(1, list.fractionsAmount(), "Amount of Fractions");
+        list.removeFraction(0);
+        assertEquals(0, list.fractionsAmount(), "Amount of fractions after removing");
     }
 
     @Test
@@ -48,14 +52,23 @@ class ListOfFractionsTest {
     }
 
     @Test
-    void printFractions() {
-    }
-
-    @Test
     void sumOfFractions() {
+        list.addFraction(new Fraction(4, 8));
+        list.addFraction(new Fraction(3, 7));
+        Fraction x = list.sumOfFractions();
+        assertEquals(52, x.getTop(), "Top");
+        assertEquals(56, x.getBottom(), "Bottom");
     }
 
     @Test
     void fractionsAverage() {
+        list.addFraction(new Fraction(4, 8));
+        list.addFraction(new Fraction(3, 7));
+        list.addFraction(new Fraction(5, 6));
+        Fraction x = list.fractionsAverage();
+        assertEquals(592, x.getTop(), "Top");
+        assertEquals(1008, x.getBottom(), "Bottom");
     }
+
+    //shorten function is flawed, so it cant be used
 }
